@@ -1,0 +1,194 @@
+<!doctype html>
+
+<title>V2Tlab</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="docs.css">
+<script src="activebookmark.js"></script>
+
+<script src="../lib/codemirror.js"></script>
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../addon/runmode/runmode.js"></script>
+<script src="../addon/runmode/colorize.js"></script>
+<script src="../mode/javascript/javascript.js"></script>
+<script src="../mode/xml/xml.js"></script>
+<script src="../mode/css/css.js"></script>
+<script src="../mode/htmlmixed/htmlmixed.js"></script>
+<style>
+  dt { text-indent: -2em; padding-left: 2em; margin-top: 1em; }
+  dd { margin-left: 1.5em; margin-bottom: 1em; }
+  dt {margin-top: 1em;}
+  dd dl, dd dt, dd dd, dd ul { margin-top: 0; margin-bottom: 0; }
+  dt + dt { margin-top: 0; }
+  dt.command { position: relative; }
+  span.keybinding { position: absolute; right: 0; font-size: 80%; color: #555; text-indent: 0; }
+</style>
+
+<div id=nav>
+  <a href="https://GuoliangLai.github.io"><img id=logo src="V2t.png"height="150" width="150" ></a>
+
+  <ul>
+    <li><a href="home.html">主页</a>
+    <li><a href="#overview" class=active data-default="true">实验室成果</a>
+    <li><a href="renyuan.html">实验室人员组成</a>
+    <li><a href="gonzuo.html">目前工作</a>
+  </ul>
+  <ul>
+    <li><a href="#features">实验室完成的工作</a>
+      <ul>
+        <li><a href="#api_slam">视觉slam</a></li>
+        <li><a href="#api_yuyi">语义工作</a></li>
+        <li><a href="#api_peizhun">激光点云配准</a></li>
+        <li><a href="#api_dingwei">激光点云定位</a></li>
+        <li><a href="#api_pingjie">点云拼接</a></li>
+        <li><a href="#api_gutai">固态激光雷达研究</a></li>
+        <li><a href="#api_shinei">室内定位</a></li>
+        <li><a href="#api_ronhe">融合定位</a></li>
+      </ul>
+    <li><a href="#code">实验室代码</a>
+      <ul>
+        <li><a href="#code_slam">视觉slam</a></li>
+        <li><a href="#code_yuyi">语义工作</a></li>
+        <li><a href="#code_peizhun">激光点云配准</a></li>
+        <li><a href="#code_dingwei">激光点云定位</a></li>
+        <li><a href="#code_pingjie">点云拼接</a></li>
+        <li><a href="#code_gutai">固态激光雷达研究</a></li>
+        <li><a href="#code_shinei">室内定位</a></li>
+        <li><a href="#code_ronhe">融合定位</a></li>
+      </ul>
+    <li><a href="#lunwen">实验室论文情况</a>
+  </ul>
+</div>
+
+<!-- <div id=nav>
+  <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="logo.png"></a>
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#overview" class=active data-default="true">Manual</a></li>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a></li>
+  </ul>
+  <ul>
+    <li><a href="#usage">Basic Usage</a></li>
+    <li><a href="#config">Configuration</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#keymaps">Key maps</a></li>
+    <li><a href="#commands">Commands</a></li>
+    <li><a href="#styling">Customized Styling</a></li>
+    <li><a href="#api">Programming API</a>
+      <ul>
+        <li><a href="#api_constructor">Constructor</a></li>
+        <li><a href="#api_content">Content manipulation</a></li>
+        <li><a href="#api_selection">Selection</a></li>
+        <li><a href="#api_configuration">Configuration</a></li>
+        <li><a href="#api_doc">Document management</a></li>
+        <li><a href="#api_history">History</a></li>
+        <li><a href="#api_marker">Text-marking</a></li>
+        <li><a href="#api_decoration">Widget, gutter, and decoration</a></li>
+        <li><a href="#api_sizing">Sizing, scrolling, and positioning</a></li>
+        <li><a href="#api_mode">Mode, state, and tokens</a></li>
+        <li><a href="#api_misc">Miscellaneous methods</a></li>
+        <li><a href="#api_static">Static properties</a></li>
+      </ul>
+    </li>
+    <li><a href="#addons">Addons</a></li>
+    <li><a href="#modeapi">Writing CodeMirror Modes</a></li>
+    <li><a href="#vimapi">Vim Mode API</a>
+      <ul>
+        <li><a href="#vimapi_configuration">Configuration</a></li>
+        <li><a href="#vimapi_events">Events</a></li>
+        <li><a href="#vimapi_extending">Extending VIM</a></li>
+      </ul>
+    </li>
+  </ul>
+</div> -->
+
+<article>
+
+<section class=first id=overview>
+    <h2 style="position: relative">
+      实验室成果介绍
+      <span style="color: #888; font-size: 1rem; position: absolute; right: 0; bottom: 0">V2Tlab</span>
+    </h2>
+
+    <p>目前实验室进行了非常多不同方向的工作，诸如视觉slam方面、激光雷达和计算机视觉的融合定位方向、多传感器的融合定位等等。</p>
+
+    <p>目前来说，实验室主要的方向就在于激光点云的处理，以及借助激光点云进行地图构建或是借助激光点云来实现定位功能</p>
+</section>
+
+<section id=api>
+    <h2>实验室完成的工作</h2>
+
+    <p> 例如...</p>
+
+
+
+    <h3 id="api_slam">视觉slam</h3>
+
+    <p id="CodeMirror"></p>
+
+    <p>这是视觉slam的工作</p>
+
+    <h3 id="api_yuyi">语义工作</h3>
+     <p>这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作
+     这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作
+   这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作
+ 这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作这是语义工作</p>
+
+    <h3 id="api_peizhun">激光点云配准</h3>
+
+    <p>这是激光点云配准工作</p>
+    <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+    <h3 id="api_dingwei">激光点云定位</h3>
+
+        <p>这是激光点云定位工作</p>
+        <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+    <h3 id="api_pingjie">点云拼接</h3>
+
+    <p>这是激光点云拼接工作</p>
+    <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+
+    <h3 id="api_gutai">固态激光雷达研究</h3>
+    <p>这是固态激光雷达研究工作</p>
+    <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+    <h3 id="api_shinei">室内定位</h3>
+    <p>这是室内定位研究工作</p>
+    <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+    <h3 id="api_ronhe">融合定位</h3>
+    <p>这是融合定位工作</p>
+    <iframe width="100%" height = "800" src="gmmreg_PAMI_preprint.pdf"></iframe>
+
+</section>
+
+<section id=code>
+    <h2>实验室代码</h2>
+    <h3 id="code_slam">视觉slam</h3>
+
+    <p id="CodeMirror"></p>
+
+    <p>这是视觉slam的工作</p>
+
+    <h3 id="code_yuyi">语义工作</h3>
+
+    <h3 id="code_peizhun">激光点云配准</h3>
+    <p><a target="_blank" href="https://github.com/GuoliangLai/gmm">GMM配准</a></p>
+
+
+    <h3 id="code_dingwei">激光点云定位</h3>
+
+        <p>这是激光点云定位工作</p>
+    <h3 id="code_pingjie">点云拼接</h3>
+
+    <p>这是激光点云拼接工作</p>
+
+    <h3 id="code_gutai">固态激光雷达研究</h3>
+    <p>这是固态激光雷达研究工作</p>
+    <h3 id="code_shinei">室内定位</h3>
+    <p>这是室内定位研究工作</p>
+    <h3 id="code_ronhe">融合定位</h3>
+    <p>这是融合定位工作</p>
+  </section>
+  <section id=lunwen>
+      <h2>实验室论文情况</h2>
+    </section>
+</article>
+
+<script>setTimeout(function(){CodeMirror.colorize();}, 20);</script>
